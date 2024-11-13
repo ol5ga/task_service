@@ -3,6 +3,7 @@ package org.example.service;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.example.model.Task;
 import org.example.repository.TaskRepository;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ import java.util.List;
 public class TaskService {
 
     private TaskRepository taskRepository;
+    private ModelMapper mapper;
+
 
     public Task createTask(Task task) {
         return taskRepository.save(task);
